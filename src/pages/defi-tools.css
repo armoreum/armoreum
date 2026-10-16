@@ -1,0 +1,394 @@
+.defi-directory {
+  --defi-rule: var(--armoreum-border);
+  --defi-quiet: var(--armoreum-text-muted);
+  --defi-faint: var(--armoreum-text-faint);
+  max-width: 1320px;
+  padding: clamp(34px, 5.4vw, 72px) clamp(19px, 4.2vw, 58px) 68px;
+}
+
+.defi-intro {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding: 22px 0 62px;
+  border-bottom: 1px solid var(--defi-rule);
+  overflow: hidden;
+}
+
+.defi-intro-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 810px;
+}
+
+.defi-eyebrow {
+  margin: 0 0 17px;
+  color: var(--armoreum-accent-label);
+  font: 500 9px/1.4 var(--app-font-mono);
+  letter-spacing: .16em;
+}
+
+.defi-intro h1 {
+  max-width: 800px;
+  margin: 0;
+  color: var(--armoreum-text-strong);
+  font: 600 clamp(38px, 5.5vw, 68px)/1.06 var(--app-font-serif);
+  letter-spacing: -.055em;
+}
+
+.defi-lede {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  max-width: 850px;
+  margin-top: 27px;
+}
+
+.defi-lede p {
+  margin: 0;
+  color: var(--defi-quiet);
+  font-size: 13px;
+  line-height: 1.78;
+}
+
+.defi-emblem {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-54%);
+  color: var(--armoreum-accent-label);
+  opacity: .42;
+}
+
+.defi-emblem-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--armoreum-accent-line);
+  border-radius: 50%;
+}
+
+.defi-emblem-ring-outer::before,
+.defi-emblem-ring-outer::after {
+  content: "";
+  position: absolute;
+  inset: 22px -10px;
+  border: 1px solid var(--armoreum-accent-line);
+  border-radius: 50%;
+  transform: rotate(42deg);
+}
+
+.defi-emblem-ring-outer::after { transform: rotate(-42deg); }
+
+.defi-emblem-ring-inner {
+  inset: 42px;
+  border-style: dashed;
+  opacity: .65;
+}
+
+.defi-emblem-axis {
+  position: absolute;
+  inset: 50% 13%;
+  height: 1px;
+  background: var(--armoreum-accent-line);
+  transform: rotate(-36deg);
+}
+
+.defi-emblem-core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.defi-products { padding: 50px 0 64px; }
+
+.defi-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 25px;
+}
+
+.defi-section-heading .defi-eyebrow { margin-bottom: 9px; }
+
+.defi-section-heading h2,
+.defi-security h2 {
+  margin: 0;
+  color: var(--armoreum-text-strong);
+  font: 600 clamp(26px, 3.3vw, 39px)/1.16 var(--app-font-serif);
+  letter-spacing: -.04em;
+}
+
+.defi-section-heading > p {
+  max-width: 405px;
+  margin: 0 0 2px;
+  color: var(--defi-quiet);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.defi-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--defi-rule);
+  border-left: 1px solid var(--defi-rule);
+}
+
+.defi-product {
+  min-width: 0;
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 21px 19px;
+  border-right: 1px solid var(--defi-rule);
+  border-bottom: 1px solid var(--defi-rule);
+  background: color-mix(in srgb, var(--armoreum-surface) 35%, transparent);
+  transition: background-color .18s ease;
+}
+
+.defi-product:hover { background: var(--armoreum-surface-hover); }
+
+.defi-product-topline {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 27px;
+  margin-bottom: 23px;
+}
+
+.defi-product-index,
+.defi-principle-index {
+  color: var(--defi-faint);
+  font: 9px var(--app-font-mono);
+  letter-spacing: .04em;
+}
+
+.defi-product-icon,
+.defi-principle-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border-strong);
+  background: var(--armoreum-accent-soft);
+}
+
+.defi-status {
+  margin-left: auto;
+  padding: 5px 7px;
+  border: 1px solid var(--armoreum-border-strong);
+  color: var(--armoreum-text-secondary);
+  font: 9px/1 var(--app-font-mono);
+  white-space: nowrap;
+}
+
+.defi-status.is-development { color: var(--armoreum-accent-label); }
+.defi-status.is-planned { color: var(--armoreum-warn-text); }
+
+.defi-product h3 {
+  margin: 0 0 6px;
+  color: var(--armoreum-text-strong);
+  font: 600 18px/1.25 var(--app-font-serif);
+  letter-spacing: -.025em;
+}
+
+.defi-product h4 {
+  margin: 0;
+  color: var(--armoreum-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.defi-product-description {
+  margin: 14px 0 22px;
+  color: var(--defi-quiet);
+  font-size: 12px;
+  line-height: 1.68;
+}
+
+.defi-product-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid var(--defi-rule);
+}
+
+.defi-evidence {
+  max-width: 60%;
+  color: var(--defi-faint);
+  font: 9px/1.45 var(--app-font-mono);
+}
+
+.defi-product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  padding: 3px 0;
+  color: var(--armoreum-accent-label);
+  border: 0;
+  background: transparent;
+  font: 600 11px/1.4 var(--app-font-sans);
+  white-space: nowrap;
+  transition: color .16s ease, transform .16s ease;
+}
+
+.defi-product-link:not(:disabled):hover {
+  color: var(--armoreum-accent-hover);
+  transform: translate(2px, -1px);
+}
+
+.defi-product-link:focus-visible {
+  outline: 2px solid var(--armoreum-accent-line);
+  outline-offset: 4px;
+}
+
+.defi-product-link.is-unavailable,
+.defi-product-link:disabled {
+  color: var(--defi-faint);
+  cursor: not-allowed;
+  opacity: .78;
+}
+
+.defi-security {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: clamp(36px, 7vw, 104px);
+  padding: 43px 0 20px;
+  border-top: 1px solid var(--defi-rule);
+}
+
+.defi-security-copy { max-width: 480px; }
+.defi-security-copy .defi-eyebrow { margin-bottom: 13px; }
+.defi-security h2 { margin-bottom: 20px; }
+
+.defi-security-copy > p:not(.defi-eyebrow) {
+  margin: 0 0 14px;
+  color: var(--defi-quiet);
+  font-size: 12px;
+  line-height: 1.78;
+}
+
+.defi-principles { border-top: 1px solid var(--defi-rule); }
+
+.defi-principle {
+  display: grid;
+  grid-template-columns: 27px 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--defi-rule);
+}
+
+.defi-principle-index { padding-top: 8px; }
+.defi-principle-icon { width: 30px; height: 30px; }
+.defi-principle h3 {
+  margin: 1px 0 6px;
+  color: var(--armoreum-text-strong);
+  font: 600 14px/1.35 var(--app-font-serif);
+}
+
+.defi-principle p {
+  max-width: 570px;
+  margin: 0;
+  color: var(--defi-quiet);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Keep page-specific typography ahead of the shell's broad content selectors. */
+html[data-theme] .content.defi-directory .defi-intro h1,
+html[data-theme] .content.defi-directory .defi-section-heading h2,
+html[data-theme] .content.defi-directory .defi-security h2,
+html[data-theme] .content.defi-directory .defi-product h3,
+html[data-theme] .content.defi-directory .defi-principle h3 {
+  color: var(--armoreum-text-strong);
+}
+
+html[data-theme] .content.defi-directory .defi-lede p,
+html[data-theme] .content.defi-directory .defi-section-heading > p,
+html[data-theme] .content.defi-directory .defi-product h4,
+html[data-theme] .content.defi-directory .defi-product-description,
+html[data-theme] .content.defi-directory .defi-security-copy > p,
+html[data-theme] .content.defi-directory .defi-principle p {
+  color: var(--armoreum-text-muted);
+}
+
+html[data-theme] .content.defi-directory .defi-product-index,
+html[data-theme] .content.defi-directory .defi-principle-index,
+html[data-theme] .content.defi-directory .defi-evidence {
+  color: var(--armoreum-text-faint);
+}
+
+html[data-theme] .content.defi-directory .defi-eyebrow,
+html[data-theme] .content.defi-directory .defi-product-link:not(:disabled) {
+  color: var(--armoreum-accent-label);
+}
+
+html[data-theme="light"] .content.defi-directory .defi-status.is-planned {
+  color: var(--armoreum-warn-text);
+}
+
+html[data-theme="light"] .content.defi-directory .defi-product-link:disabled {
+  color: var(--armoreum-text-faint);
+}
+
+@media (min-width: 768px) {
+  .defi-product:nth-child(3n + 2),
+  .defi-product:nth-child(3n) { padding-left: 24px; }
+}
+
+@media (max-width: 900px) {
+  .defi-emblem { right: -82px; opacity: .24; }
+  .defi-intro-copy { max-width: 720px; }
+  .defi-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .defi-product { min-height: 310px; }
+  .defi-product:nth-child(odd) { padding-left: 17px; }
+  .defi-product:nth-child(even) { padding-left: 21px; }
+}
+
+@media (max-width: 767px) {
+  .defi-directory { padding: 29px 17px 48px; }
+  .defi-intro { min-height: 0; padding: 27px 0 35px; }
+  .defi-intro h1 { max-width: 610px; font-size: clamp(36px, 10vw, 54px); }
+  .defi-lede { grid-template-columns: 1fr; gap: 12px; max-width: 580px; margin-top: 22px; }
+  .defi-lede p { font-size: 12px; }
+  .defi-emblem { width: 195px; height: 195px; top: auto; right: -102px; bottom: -59px; transform: none; opacity: .15; }
+  .defi-products { padding: 37px 0 43px; }
+  .defi-section-heading { display: block; padding-bottom: 20px; }
+  .defi-section-heading > p { margin-top: 11px; }
+  .defi-product-grid { grid-template-columns: 1fr; }
+  .defi-product { min-height: 0; padding: 17px 15px 15px !important; }
+  .defi-product-topline { margin-bottom: 16px; }
+  .defi-product-description { margin: 11px 0 19px; }
+  .defi-product-bottom { padding-top: 11px; }
+  .defi-evidence { max-width: 65%; }
+  .defi-security { grid-template-columns: 1fr; gap: 22px; padding-top: 34px; }
+  .defi-security-copy { max-width: 640px; }
+}
+
+@media (max-width: 360px) {
+  .defi-directory { padding-right: 13px; padding-left: 13px; }
+  .defi-product-bottom { align-items: start; flex-direction: column; }
+  .defi-evidence { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .defi-product,
+  .defi-product-link { transition: none; }
+}
+.defi-product-grid.defi-duo { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .defi-product-grid.defi-duo { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.defi-duo .defi-product { gap: 0; }
+.defi-duo-label { margin: 18px 0 8px; color: var(--armoreum-text-faint); font: 500 10px var(--app-font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.defi-duo-list { padding: 0; list-style: none; }
+.defi-duo .defi-product-bottom { margin-top: 22px; gap: 14px; flex-wrap: wrap; }

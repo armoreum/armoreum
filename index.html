@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (function () {
+        var preference = null;
+        try {
+          preference = localStorage.getItem('armoreum-theme-preference');
+          if (preference === null) {
+            const legacyPreference = localStorage.getItem('bulletproof-theme-preference');
+            if (legacyPreference === 'light' || legacyPreference === 'dark' || legacyPreference === 'system-auto-time') {
+              localStorage.setItem('armoreum-theme-preference', legacyPreference);
+              preference = localStorage.getItem('armoreum-theme-preference');
+              if (preference === legacyPreference) localStorage.removeItem('bulletproof-theme-preference');
+            }
+          }
+        } catch (_) {}
+        var hour = new Date().getHours();
+        var theme = preference === 'light' || preference === 'dark'
+          ? preference
+          : (hour >= 6 && hour < 18 ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.themePreference = preference || 'system-auto-time';
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+    <title>Security Infrastructure for a Decentralized World.</title>
+    <meta name="description" content="Security Infrastructure for a Decentralized World." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Security Infrastructure for a Decentralized World." />
+    <meta property="og:description" content="Security Infrastructure for a Decentralized World." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://armoreum.io/" />
+    <meta property="og:image" content="https://armoreum.io/armoreum-logo-light.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1231" />
+    <meta property="og:image:height" content="1156" />
+    <meta property="og:image:alt" content="Security Infrastructure for a Decentralized World." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Security Infrastructure for a Decentralized World." />
+    <meta name="twitter:description" content="Security Infrastructure for a Decentralized World." />
+    <meta name="twitter:image" content="https://armoreum.io/armoreum-logo-light.png" />
+    <meta name="twitter:image:alt" content="Security Infrastructure for a Decentralized World." />
+    <link rel="icon" type="image/png" href="/armoreum-logo-light.png" data-theme-icon />
+    <link rel="apple-touch-icon" href="/armoreum-logo-light.png" data-theme-icon />
+    <script>
+      (function () {
+        var links = document.querySelectorAll('link[data-theme-icon]');
+        var syncThemeIcons = function () {
+          var logo = document.documentElement.dataset.theme === 'dark'
+            ? '/armoreum-logo-dark.png'
+            : '/armoreum-logo-light.png';
+          links.forEach(function (link) { link.href = logo; });
+        };
+        syncThemeIcons();
+        new MutationObserver(syncThemeIcons).observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-theme']
+        });
+      })();
+    </script>
+    <link rel="canonical" href="https://armoreum.io/" />
+    <meta name="theme-color" content="#191c1f" />
+  </head>
+  <body>
+    <div id="root">
+      <div role="status" style="min-height:100svh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:2rem;box-sizing:border-box;background:#171c1f;color:#e9e6df;font:16px system-ui;text-align:center">
+        <img src="%BASE_URL%armoreum-logo-dark.png" alt="armoreum" width="120" height="120" decoding="async" style="display:block;width:clamp(88px,18vw,120px);height:auto;object-fit:contain;margin-bottom:.5rem" />
+        <span>Loading <strong><em>armoreum</em></strong>…</span>
+        <p style="margin:0;color:inherit">Built on Hashes. Designed for Quantum Resistance.</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

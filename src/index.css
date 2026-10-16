@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background)); --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border)); --color-input: hsl(var(--input)); --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card)); --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover)); --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary)); --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary)); --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted)); --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent)); --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive)); --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-sidebar: hsl(var(--sidebar)); --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --font-sans: var(--app-font-sans); --font-serif: var(--app-font-serif); --font-mono: var(--app-font-mono);
+  --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px);
+}
+:root, .dark {
+  color-scheme: dark;
+  --background: 216 13% 11%; --foreground: 38 21% 91%; --border: 215 10% 24%;
+  --card: 216 12% 14%; --card-foreground: 38 21% 91%; --sidebar: 218 15% 9%; --sidebar-foreground: 42 12% 84%;
+  --primary: 153 20% 43%; --primary-foreground: 42 20% 96%; --secondary: 215 9% 20%;
+  --secondary-foreground: 42 14% 86%; --muted: 215 9% 18%; --muted-foreground: 213 7% 64%;
+  --accent: 39 27% 20%; --accent-foreground: 38 72% 74%; --destructive: 5 53% 48%;
+  --destructive-foreground: 0 0% 98%; --input: 210 7% 26%; --ring: 145 22% 45%;
+  --popover: 210 8% 14%; --popover-foreground: 42 16% 91%; --radius: .5rem;
+  --app-font-sans: 'DM Sans', sans-serif; --app-font-serif: 'Manrope', sans-serif; --app-font-mono: 'DM Mono', monospace;
+  --chart-1: 145 22% 48%; --chart-2: 40 72% 58%; --chart-3: 200 18% 58%; --chart-4: 26 42% 55%; --chart-5: 170 19% 42%;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: 90 14% 96%; --foreground: 150 9% 17%; --border: 132 10% 85%;
+  --card: 0 0% 100%; --card-foreground: 150 9% 17%; --sidebar: 100 20% 98%; --sidebar-foreground: 150 9% 25%;
+  --primary: 139 17% 39%; --primary-foreground: 0 0% 100%; --secondary: 110 14% 93%;
+  --secondary-foreground: 150 9% 27%; --muted: 110 12% 93%; --muted-foreground: 140 8% 41%;
+  --accent: 134 25% 92%; --accent-foreground: 145 25% 27%; --destructive: 5 48% 43%;
+  --destructive-foreground: 0 0% 100%; --input: 132 10% 82%; --ring: 140 18% 39%;
+  --popover: 0 0% 100%; --popover-foreground: 150 9% 17%;
+  --chart-1: 139 31% 36%; --chart-2: 40 60% 42%; --chart-3: 200 38% 42%; --chart-4: 26 52% 45%; --chart-5: 170 34% 34%;
+}
+@layer base {
+  * { @apply border-border; }
+  body { @apply font-sans antialiased bg-background text-foreground; margin: 0; min-width: 320px; }
+}
+html { scroll-behavior: smooth; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.mono { font-family: var(--app-font-mono); }
+.page-enter { animation: page-in .35s ease-out both; }
+@keyframes page-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

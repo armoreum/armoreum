@@ -1,0 +1,20 @@
+.bridge-live-page .bridge-connected-wallet { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; padding-top:14px; }
+.bridge-live-page .bridge-connected-wallet > span { min-width:0; font-size:12px; overflow-wrap:anywhere; }
+.bridge-live-page .bridge-tracking-card { display:block; min-width:0; }
+.bridge-live-page .bridge-history-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; }
+.bridge-live-page .bridge-history-explorer { display:inline-flex; align-items:center; gap:5px; font-size:12px; color:var(--armoreum-text-strong); }
+.bridge-live-page .bridge-history-refresh { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:40px; padding:8px 12px; border:1px solid var(--armoreum-border); border-radius:8px; background:var(--armoreum-surface-raised); color:var(--armoreum-text-strong); font-size:12px; cursor:pointer; }
+.bridge-live-page .bridge-history-list { display:grid; gap:12px; min-width:0; }
+.bridge-live-page .bridge-history-item { display:grid; min-width:0; gap:10px; padding:15px; border:1px solid var(--armoreum-border); border-radius:12px; background:var(--armoreum-surface); }
+.bridge-live-page .bridge-history-top { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; min-width:0; }
+.bridge-live-page .bridge-history-top strong { font-size:14px; line-height:1.5; color:var(--armoreum-text-strong); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+.bridge-live-page .bridge-history-top strong > span { font-size:11px; font-weight:500; color:var(--armoreum-text-muted); }
+.bridge-live-page .bridge-history-top .defi-flow-card-status { flex:none; font-size:10px; line-height:1.4; padding:4px 8px; border-radius:20px; }
+.bridge-live-page .bridge-history-route { margin:0; font-size:12px; line-height:1.6; color:var(--armoreum-text-strong); overflow-wrap:anywhere; }
+.bridge-live-page .bridge-history-route > span { display:inline-block; padding-inline:5px; color:var(--armoreum-text-muted); }
+.bridge-live-page .bridge-history-item time { font-size:10px; color:var(--armoreum-text-muted); }
+.bridge-live-page .bridge-history-links { display:flex; flex-wrap:wrap; gap:8px 14px; }
+.bridge-live-page .bridge-history-links a { display:inline-flex; align-items:center; gap:4px; min-height:32px; font-size:11px; color:var(--armoreum-text-strong); }
+.bridge-live-page .bridge-history-scan { font-size:11px; line-height:1.6; color:var(--armoreum-text-muted); overflow-wrap:anywhere; }
+.bridge-live-page .bridge-history-item small { font-size:11px; overflow-wrap:anywhere; }
+@media(max-width:600px) { .bridge-live-page.is-embedded .bridge-tracking-card { padding:12px; } .bridge-live-page .bridge-history-item { padding:12px; } }

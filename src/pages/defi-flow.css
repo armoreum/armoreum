@@ -1,0 +1,497 @@
+.defi-flow-page {
+  width: min(100%, 1220px);
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 52px) clamp(19px, 4.2vw, 58px) 56px;
+  color: var(--armoreum-text);
+}
+
+.defi-flow-header {
+  padding-bottom: clamp(24px, 3vw, 36px);
+  border-bottom: 1px solid var(--armoreum-border);
+}
+
+.defi-flow-title-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.defi-flow-title-icon,
+.defi-flow-info-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border-strong);
+  background: var(--armoreum-accent-soft);
+}
+
+.defi-flow-title-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+}
+
+.defi-flow-title-copy { min-width: 0; }
+.defi-flow-eyebrow,
+.defi-flow-card-kicker {
+  display: block;
+  color: var(--armoreum-accent-label);
+  font: 500 9px/1.5 var(--app-font-mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.defi-flow-title-copy h1 {
+  margin: 4px 0 2px;
+  color: var(--armoreum-text-strong);
+  font: 600 clamp(30px, 4.8vw, 48px)/1.08 var(--app-font-serif);
+  letter-spacing: -.045em;
+}
+
+.defi-flow-title-copy p {
+  margin: 0;
+  color: var(--armoreum-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.defi-flow-title-copy .defi-flow-network-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.defi-flow-network-pair-icon {
+  display: inline-grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  place-items: center;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border-strong);
+  border-radius: 50%;
+  background: var(--armoreum-accent-soft);
+}
+
+.defi-flow-preview-status {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 7px 10px;
+  color: var(--armoreum-warn-text);
+  border: 1px solid var(--armoreum-warning-border);
+  background: var(--armoreum-warning-bg);
+  font: 9px/1.35 var(--app-font-mono);
+  letter-spacing: .02em;
+}
+
+.defi-flow-preview-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.defi-flow-intro {
+  max-width: 810px;
+  margin: 21px 0 0;
+  color: var(--armoreum-text-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.defi-flow-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+  align-items: start;
+  gap: 18px;
+  padding-top: 26px;
+}
+
+.defi-flow-card,
+.defi-flow-info-card {
+  min-width: 0;
+  border: 1px solid var(--armoreum-border);
+  border-radius: 13px;
+  background: var(--armoreum-surface);
+  box-shadow: 0 10px 26px var(--armoreum-shadow);
+}
+
+.defi-flow-card { padding: clamp(18px, 2.5vw, 27px); }
+.defi-flow-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.defi-flow-card-heading h2 {
+  margin: 6px 0 0;
+  color: var(--armoreum-text-strong);
+  font: 600 20px/1.2 var(--app-font-serif);
+  letter-spacing: -.025em;
+}
+
+.defi-flow-card-status {
+  padding: 5px 8px;
+  color: var(--armoreum-text-faint);
+  border: 1px solid var(--armoreum-border);
+  font: 9px/1.3 var(--app-font-mono);
+  white-space: nowrap;
+}
+
+.defi-flow-fieldset {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.defi-flow-field { display: grid; gap: 7px; }
+.defi-flow-field > span,
+.bridge-network-field > span {
+  color: var(--armoreum-text-muted);
+  font: 10px/1.45 var(--app-font-mono);
+}
+
+.defi-flow-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 58px;
+  padding: 8px 10px 8px 14px;
+  border: 1px solid var(--armoreum-border-strong);
+  border-radius: 8px;
+  background: var(--armoreum-input);
+}
+
+.defi-flow-input-row input {
+  min-width: 0;
+  width: 100%;
+  height: 36px;
+  padding: 0;
+  color: var(--armoreum-text-faint);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 17px;
+}
+
+.defi-flow-input-row input::placeholder { color: var(--armoreum-text-faint); opacity: .82; }
+.defi-flow-input-row input:disabled,
+.defi-flow-fieldset:disabled .defi-flow-asset-select { opacity: .78; }
+
+.defi-flow-asset-select {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 10px;
+  color: var(--armoreum-text-muted);
+  border: 1px solid var(--armoreum-border);
+  border-radius: 6px;
+  background: var(--armoreum-surface-raised);
+  font: 500 10px/1.2 var(--app-font-sans);
+  white-space: nowrap;
+}
+
+.defi-flow-switch-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  justify-self: center;
+  margin: -1px 0;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border);
+  border-radius: 50%;
+  background: var(--armoreum-surface-raised);
+}
+
+.defi-flow-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 3px;
+  padding: 13px 0;
+  color: var(--armoreum-text-muted);
+  border-top: 1px solid var(--armoreum-border);
+  font-size: 10px;
+}
+
+.defi-flow-summary-row span:last-child { text-align: right; }
+
+.defi-flow-submit {
+  min-height: 44px;
+  color: var(--armoreum-text-faint);
+  border: 1px solid var(--armoreum-border);
+  border-radius: 7px;
+  background: var(--armoreum-surface-raised);
+  font: 600 11px/1.4 var(--app-font-sans);
+  cursor: not-allowed;
+}
+
+.defi-flow-inline-note {
+  margin: 13px 0 0;
+  color: var(--armoreum-text-faint);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.defi-flow-info-card { padding: 21px; }
+.defi-flow-info-icon {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 19px;
+  border-radius: 9px;
+}
+
+.defi-flow-info-card h2 {
+  margin: 8px 0 10px;
+  color: var(--armoreum-text-strong);
+  font: 600 19px/1.25 var(--app-font-serif);
+  letter-spacing: -.02em;
+}
+
+.defi-flow-info-card > p {
+  margin: 0;
+  color: var(--armoreum-text-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.defi-flow-caution {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 12px;
+  color: var(--armoreum-warning-text);
+  border: 1px solid var(--armoreum-warning-border);
+  background: var(--armoreum-warning-bg);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.defi-flow-caution svg { flex: 0 0 auto; margin-top: 1px; }
+.defi-flow-info-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+  color: var(--armoreum-text-faint);
+  font: 9px/1.5 var(--app-font-mono);
+}
+
+.bridge-route-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.bridge-network-field {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  padding: 13px 14px;
+  border: 1px solid var(--armoreum-border);
+  border-radius: 8px;
+  background: var(--armoreum-surface-raised);
+}
+
+.bridge-network-field strong {
+  overflow: hidden;
+  color: var(--armoreum-text-secondary);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bridge-direction-toggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border-strong);
+  border-radius: 50%;
+  background: var(--armoreum-accent-soft);
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.bridge-direction-toggle:hover {
+  color: var(--armoreum-text-strong);
+  border-color: var(--armoreum-accent-line);
+  background: var(--armoreum-surface-hover);
+}
+
+.bridge-asset-select { width: 100%; justify-content: space-between; }
+.bridge-amount-row { grid-template-columns: minmax(0, 1fr) auto; }
+
+/* Live bridge controls, including the compact token-page dialog. */
+.bridge-live-page .defi-flow-field { display:grid; min-width:0; gap:7px; margin:0 0 16px; }
+.bridge-live-page .defi-flow-field > span { color:var(--armoreum-text-secondary); font-size:12px; font-weight:550; }
+.bridge-live-page .defi-flow-field input,
+.bridge-live-page .defi-flow-field select {
+  display:block; width:100%; min-width:0; min-height:48px; box-sizing:border-box;
+  padding:11px 13px; border:1px solid var(--armoreum-border-strong); border-radius:10px;
+  background:var(--armoreum-surface-raised); color:var(--armoreum-text-strong);
+  font:400 16px/1.4 var(--app-font-sans); outline:none;
+}
+.bridge-live-page .defi-flow-field input::placeholder { color:var(--armoreum-text-muted); }
+.bridge-live-page .defi-flow-field input:focus-visible,
+.bridge-live-page .defi-flow-field select:focus-visible { border-color:var(--armoreum-accent-label); box-shadow:0 0 0 2px var(--armoreum-accent-soft); }
+.bridge-live-page .defi-flow-field > small { color:var(--armoreum-text-muted); font-size:11px; line-height:1.5; }
+.bridge-quote-summary { display:grid; gap:9px; padding:13px; margin:2px 0 16px; border:1px solid var(--armoreum-border); border-radius:10px; background:var(--armoreum-surface-raised); }
+.bridge-quote-summary .defi-flow-summary-row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0; padding:0; border:0; font-size:11px; line-height:1.5; color:var(--armoreum-text-secondary); }
+.bridge-quote-summary .defi-flow-summary-row > :last-child { text-align:right; overflow-wrap:anywhere; }
+.bridge-quote-summary .defi-flow-summary-row strong { color:var(--armoreum-text-strong); font-weight:600; }
+.bridge-gas-note { color:var(--armoreum-text-muted); font-size:10px; line-height:1.5; }
+.bridge-live-page .defi-flow-submit {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; gap:8px;
+  margin:0; padding:12px 16px; border:1px solid var(--armoreum-accent-label); border-radius:10px;
+  color:var(--armoreum-surface); background:var(--armoreum-accent-label); font-size:14px; font-weight:600; cursor:pointer;
+}
+.bridge-live-page .defi-flow-submit:disabled { opacity:1; color:var(--armoreum-text-muted); background:var(--armoreum-surface-raised); border-color:var(--armoreum-border); cursor:not-allowed; }
+.bridge-live-page .defi-flow-submit:focus-visible,
+.bridge-history-section > summary:focus-visible { outline:2px solid var(--armoreum-accent-label); outline-offset:3px; }
+.bridge-live-page .defi-flow-error { margin-top:12px; padding:10px 12px; border:1px solid var(--armoreum-warning-border); border-radius:8px; color:var(--armoreum-warn-text); background:var(--armoreum-warning-bg); font-size:12px; overflow-wrap:anywhere; }
+.bridge-history-section { min-width:0; }
+.bridge-history-section > summary { display:none; }
+.bridge-live-page.is-embedded .defi-flow-layout { grid-template-columns:minmax(0, 1fr); gap:16px; padding-top:16px; }
+.bridge-live-page.is-embedded .bridge-card { padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
+.bridge-live-page.is-embedded .defi-flow-card-heading { align-items:center; gap:8px; margin-bottom:12px; }
+.bridge-live-page.is-embedded .defi-flow-card-kicker { font-size:9px; letter-spacing:.04em; }
+.bridge-live-page.is-embedded .defi-flow-card-status { border-radius:20px; font-size:9px; }
+.bridge-live-page.is-embedded .bridge-route-picker { grid-template-columns:minmax(0, 1fr) 40px minmax(0, 1fr); gap:8px; margin-bottom:18px; }
+.bridge-live-page.is-embedded .bridge-network-field { gap:5px; padding:12px 10px; }
+.bridge-live-page.is-embedded .bridge-network-field > span { font-size:11px; color:var(--armoreum-text-muted); }
+.bridge-live-page.is-embedded .bridge-network-field strong { color:var(--armoreum-text-strong); font-size:12px; }
+.bridge-live-page.is-embedded .bridge-network-field small { color:var(--armoreum-text-secondary); font:10px/1.6 var(--app-font-mono); }
+.bridge-live-page.is-embedded .bridge-direction-toggle { width:40px; height:40px; }
+.bridge-live-page.is-embedded .bridge-history-section { border-top:1px solid var(--armoreum-border); }
+.bridge-live-page.is-embedded .bridge-history-section > summary { display:flex; min-height:44px; align-items:center; justify-content:space-between; gap:10px; padding:10px 0 0; color:var(--armoreum-text-secondary); font-size:12px; list-style:none; cursor:pointer; }
+.bridge-history-section > summary::-webkit-details-marker { display:none; }
+.bridge-history-section[open] > summary svg { transform:rotate(180deg); }
+.bridge-live-page.is-embedded .bridge-tracking-card { display:block; margin:10px 0 0; padding:12px; border-radius:10px; box-shadow:none; }
+.bridge-live-page .bridge-history-refresh { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:36px; padding:7px 10px; border:1px solid var(--armoreum-border); border-radius:7px; color:var(--armoreum-text-secondary); background:var(--armoreum-surface-raised); font-size:11px; cursor:pointer; }
+.bridge-live-page .defi-flow-inline-note { margin:10px 0 0; color:var(--armoreum-text-secondary); font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
+.bridge-live-page .defi-flow-inline-note > button { margin-top:8px; }
+.bridge-amount-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.bridge-amount-heading > label { color:var(--armoreum-text-secondary); font-size:12px; font-weight:550; }
+.bridge-amount-shortcuts { display:flex; gap:6px; margin-left:auto; }
+.bridge-amount-shortcuts > button {
+  min-width:44px; min-height:32px; padding:5px 10px; border:1px solid var(--armoreum-border-strong); border-radius:7px;
+  background:var(--armoreum-accent-soft); color:var(--armoreum-accent-label); font-size:12px; font-weight:600; cursor:pointer;
+}
+.bridge-amount-shortcuts > button:disabled { background:var(--armoreum-surface-raised); color:var(--armoreum-text-muted); border-color:var(--armoreum-border); cursor:not-allowed; }
+.bridge-wallet-balance { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:3px 8px; color:var(--armoreum-text-muted); font-size:11px; line-height:1.5; }
+.bridge-wallet-balance-value { display:flex; align-items:center; gap:6px; min-width:0; max-width:100%; margin-left:auto; }
+.bridge-wallet-balance-value strong { min-width:0; overflow-wrap:anywhere; color:var(--armoreum-text-secondary); font:400 11px/1.5 var(--app-font-mono); text-align:right; }
+.bridge-wallet-balance-value button { display:grid; flex:0 0 28px; width:28px; height:28px; place-items:center; border:1px solid var(--armoreum-border); border-radius:6px; background:var(--armoreum-surface-raised); color:var(--armoreum-text-secondary); cursor:pointer; }
+.bridge-wallet-balance-value button:disabled { color:var(--armoreum-text-muted); cursor:wait; }
+.bridge-amount-shortcuts > button:focus-visible,
+.bridge-wallet-balance-value button:focus-visible { outline:2px solid var(--armoreum-accent-label); outline-offset:2px; }
+.bridge-live-page .bridge-balance-warning { color:var(--armoreum-warn-text); }
+.bridge-matched-token { display:flex; align-items:center; gap:8px; margin:0 0 16px; color:var(--armoreum-text-secondary); font-size:12px; }
+.bridge-matched-token strong { color:var(--armoreum-accent-label); font:500 11px var(--app-font-mono); }
+.bridge-reserve-status { display:flex; justify-content:space-between; flex-wrap:wrap; gap:5px 10px; padding:9px 0 0; border-top:1px solid var(--armoreum-border); font-size:11px; color:var(--armoreum-text-muted); }
+.bridge-reserve-status strong { min-width:0; margin-left:auto; color:var(--armoreum-text-secondary); font:400 11px/1.5 var(--app-font-mono); overflow-wrap:anywhere; text-align:right; }
+.bridge-reserve-warning { display:grid; gap:8px; padding:10px; border:1px solid var(--armoreum-warning-border); border-radius:8px; background:var(--armoreum-warning-bg); color:var(--armoreum-warn-text); font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
+.bridge-reserve-warning button { justify-self:start; max-width:100%; min-height:36px; padding:7px 10px; border:1px solid var(--armoreum-warning-border); border-radius:6px; background:var(--armoreum-surface); color:var(--armoreum-warn-text); font-size:11px; cursor:pointer; overflow-wrap:anywhere; }
+.defi-flow-static-token {
+  padding: 8px 10px;
+  color: var(--armoreum-text-faint);
+  border: 1px solid var(--armoreum-border);
+  border-radius: 6px;
+  font: 10px/1.2 var(--app-font-mono);
+}
+
+.bridge-status-list {
+  display: grid;
+  gap: 0;
+  margin-top: 14px;
+  border-top: 1px solid var(--armoreum-border);
+}
+
+.bridge-status-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--armoreum-border);
+}
+
+.bridge-status-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--armoreum-accent-label);
+  border: 1px solid var(--armoreum-border);
+  border-radius: 7px;
+  background: var(--armoreum-surface-raised);
+}
+
+.bridge-status-list strong,
+.bridge-status-list small { display: block; }
+.bridge-status-list strong { color: var(--armoreum-text-secondary); font-size: 10px; font-weight: 600; }
+.bridge-status-list small { margin-top: 4px; color: var(--armoreum-text-faint); font-size: 9px; line-height: 1.45; }
+
+.defi-flow-page :is(a, button, input):focus-visible {
+  outline: 2px solid var(--armoreum-accent-line);
+  outline-offset: 3px;
+}
+
+@media (max-width: 920px) {
+  .defi-flow-layout { grid-template-columns: minmax(0, 1fr); }
+  .defi-flow-info-card { display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 13px; }
+  .defi-flow-info-icon { grid-row: span 3; margin: 0; }
+  .defi-flow-info-card > .defi-flow-eyebrow,
+  .defi-flow-info-card > h2,
+  .defi-flow-info-card > p { grid-column: 2; }
+  .defi-flow-info-card h2 { margin-top: 5px; }
+  .defi-flow-info-card .defi-flow-caution,
+  .defi-flow-info-card .defi-flow-info-foot,
+  .defi-flow-info-card .bridge-status-list { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .defi-flow-page { padding: 25px 17px 35px; }
+  .defi-flow-title-row { align-items: flex-start; gap: 11px; }
+  .defi-flow-title-icon { width: 43px; height: 43px; border-radius: 11px; }
+  .defi-flow-title-icon svg { width: 20px; height: 20px; }
+  .defi-flow-title-copy h1 { font-size: 32px; }
+  .defi-flow-title-copy p { font-size: 11px; }
+  .defi-flow-preview-status { align-self: center; gap: 6px; margin-left: auto; padding: 6px 7px; font-size: 8px; }
+  .defi-flow-preview-status > span { width: 5px; height: 5px; }
+  .defi-flow-intro { margin-top: 18px; font-size: 12px; line-height: 1.65; }
+  .defi-flow-layout { gap: 12px; padding-top: 18px; }
+  .defi-flow-card { padding: 17px 14px; }
+  .defi-flow-card-heading { margin-bottom: 17px; }
+  .defi-flow-card-heading h2 { font-size: 18px; }
+  .defi-flow-input-row { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 9px 11px; }
+  .defi-flow-asset-select { justify-content: space-between; }
+  .defi-flow-summary-row { font-size: 9px; }
+  .defi-flow-info-card { padding: 16px 14px; }
+  .bridge-route-picker { grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr); gap: 5px; }
+  .bridge-network-field { padding: 11px 8px; }
+  .bridge-network-field strong { font-size: 9px; }
+  .bridge-direction-toggle { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bridge-direction-toggle { transition: none; }
+}

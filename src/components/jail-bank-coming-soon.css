@@ -1,0 +1,12 @@
+.jail-bank-notice { max-width: 1080px; margin-inline: auto; }
+.jail-bank-intro { border: 1px solid var(--border, #34443d); border-radius: 20px; padding: clamp(24px, 5vw, 54px); text-align: center; background: var(--card, rgba(127,150,136,.04)); }
+.jail-bank-status { display: inline-block; padding: 6px 13px; border: 1px solid currentColor; border-radius: 999px; font-size: 12px; letter-spacing: .08em; }
+.jail-bank-symbol { margin: 26px auto 18px; width: 76px; height: 76px; display: grid; place-items: center; border: 1px solid var(--border, #34443d); border-radius: 20px; }
+.jail-bank-intro h2 { font-size: clamp(24px, 4vw, 36px); line-height: 1.2; margin: 0 auto 16px; max-width: 560px; }
+.jail-bank-intro > p { max-width: 620px; margin: 0 auto; line-height: 1.7; opacity: .75; }
+.jail-bank-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 30px 0; text-align: left; }
+.jail-bank-features > div { padding: 20px; border: 1px solid var(--border, #34443d); border-radius: 14px; }
+.jail-bank-features h3 { font-size: 18px; margin: 12px 0 8px; }
+.jail-bank-features p { font-size: 14px; line-height: 1.6; margin: 0; opacity: .75; }
+.jail-bank-intro .jail-bank-release-note { font-size: 12px; }
+@media (max-width: 600px) { .jail-bank-features { grid-template-columns: 1fr; } .jail-bank-features > div { padding: 17px; } }

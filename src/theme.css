@@ -1,0 +1,579 @@
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --armoreum-page: #191c1f;
+  --armoreum-sidebar: #151719;
+  --armoreum-surface: #1c1f22;
+  --armoreum-surface-raised: #23272a;
+  --armoreum-surface-hover: #292e30;
+  --armoreum-input: #1b1e20;
+  --armoreum-text: #e9e8e2;
+  --armoreum-text-strong: #edede7;
+  --armoreum-text-secondary: #cdd0cb;
+  --armoreum-text-muted: #9aa1a0;
+  --armoreum-text-faint: #7c8584;
+  --armoreum-border: #303638;
+  --armoreum-border-strong: #414945;
+  --armoreum-accent: #536b59;
+  --armoreum-accent-hover: #607963;
+  --armoreum-accent-text: #f0f2eb;
+  --armoreum-accent-soft: #252c28;
+  --armoreum-accent-label: #dce7de;
+  --armoreum-accent-line: #77947d;
+  --armoreum-disabled-bg: #272a2a;
+  --armoreum-disabled-border: #3a3d3c;
+  --armoreum-disabled-text: #9aa1a0;
+  --armoreum-warning-bg: #24231e;
+  --armoreum-warning-border: #4a4638;
+  --armoreum-warning-text: #e0d7bd;
+  --armoreum-error: #d6b5a2;
+  --armoreum-overlay: rgb(9 12 10 / 72%);
+  --armoreum-shadow: rgb(0 0 0 / 24%);
+  --armoreum-header: rgb(23 26 31 / 93%);
+  --armoreum-header-scrolled: rgb(23 26 31 / 98%);
+  --armoreum-gradient-green: rgb(93 125 99 / 12%);
+  --armoreum-gradient-warm: rgb(165 140 90 / 6%);
+  --armoreum-success-text: #b6d4bb;
+  --armoreum-success-bg: #202923;
+  --armoreum-warn-text: #e3c788;
+  --armoreum-warn-bg: #302b20;
+  --armoreum-danger-text: #e0a99e;
+  --armoreum-danger-bg: #302321;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --armoreum-page: #f3f4f0;
+  --armoreum-sidebar: #fbfcf9;
+  --armoreum-surface: #ffffff;
+  --armoreum-surface-raised: #f8f9f6;
+  --armoreum-surface-hover: #eef2ed;
+  --armoreum-input: #ffffff;
+  --armoreum-text: #35413b;
+  --armoreum-text-strong: #1d2621;
+  --armoreum-text-secondary: #48564e;
+  --armoreum-text-muted: #4f5d54;
+  --armoreum-text-faint: #5f6e65;
+  --armoreum-border: #d7ded8;
+  --armoreum-border-strong: #c2cec4;
+  --armoreum-accent: #52735c;
+  --armoreum-accent-hover: #43654e;
+  --armoreum-accent-text: #ffffff;
+  --armoreum-accent-soft: #e6eee7;
+  --armoreum-accent-label: #365640;
+  --armoreum-accent-line: #668a6c;
+  --armoreum-disabled-bg: #edf0ec;
+  --armoreum-disabled-border: #c6d0c8;
+  --armoreum-disabled-text: #4f5d54;
+  --armoreum-warning-bg: #fbf6e8;
+  --armoreum-warning-border: #dfca94;
+  --armoreum-warning-text: #6e5729;
+  --armoreum-error: #8b423b;
+  --armoreum-overlay: rgb(28 36 30 / 34%);
+  --armoreum-shadow: rgb(34 48 38 / 12%);
+  --armoreum-header: rgb(251 252 249 / 93%);
+  --armoreum-header-scrolled: rgb(251 252 249 / 98%);
+  --armoreum-gradient-green: rgb(82 115 92 / 9%);
+  --armoreum-gradient-warm: rgb(184 153 91 / 8%);
+  --armoreum-success-text: #285e3c;
+  --armoreum-success-bg: #eaf4eb;
+  --armoreum-warn-text: #77571d;
+  --armoreum-warn-bg: #fbf2dd;
+  --armoreum-danger-text: #8b423b;
+  --armoreum-danger-bg: #f9ece9;
+}
+
+html,
+body {
+  background: var(--armoreum-page);
+  color: var(--armoreum-text);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.app-frame {
+  color: var(--armoreum-text);
+  background-color: var(--armoreum-page);
+  background-image:
+    radial-gradient(950px 540px at 100% -10%, var(--armoreum-gradient-green), transparent 70%),
+    radial-gradient(800px 500px at -18% 62%, var(--armoreum-gradient-warm), transparent 72%);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.sidebar { background-color: var(--armoreum-sidebar); border-color: var(--armoreum-border); }
+.nav-link { color: var(--armoreum-text-muted); }
+.nav-link:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-raised); }
+.nav-link.selected { color: var(--armoreum-accent-label); background: var(--armoreum-accent-soft); box-shadow: inset 2px 0 var(--armoreum-accent-line); }
+.sidebar-toggle, .theme-toggle { color: var(--armoreum-text-secondary); border: 1px solid var(--armoreum-border); background-color: var(--armoreum-surface-raised); }
+.sidebar-toggle:hover, .theme-toggle:hover { color: var(--armoreum-text-strong); border-color: var(--armoreum-border-strong); background-color: var(--armoreum-surface-hover); }
+.theme-toggle { width: 38px; height: 38px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; padding: 0; border-radius: 5px; cursor: pointer; transition: color .16s, border-color .16s, background-color .16s; }
+.theme-toggle-sidebar { width: 32px; height: 32px; margin: 0 0 9px; }
+.theme-toggle:focus-visible, .header-action:focus-visible, .app-launcher-item:focus-visible, .header-account-menu a:focus-visible, .site-brand-lockup:focus-visible { outline: 2px solid var(--armoreum-accent-line); outline-offset: 2px; }
+.brand-mark, .mobile-brand-mark, .app-launcher-icon { color: var(--armoreum-accent-label); border-color: var(--armoreum-border-strong); background-color: var(--armoreum-accent-soft); }
+.sidebar-chain { border-color: var(--armoreum-border); }
+.sidebar-chain b { color: var(--armoreum-text-secondary); }
+.sidebar-chain small, .sidebar-foot { color: var(--armoreum-text-faint); }
+.main-column { background: transparent; }
+.content { color: var(--armoreum-text); }
+.site-header { color: var(--armoreum-text); background: var(--armoreum-header); border-color: var(--armoreum-border); transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.site-brand-lockup { color: var(--armoreum-text-strong); }
+.header-action { color: var(--armoreum-text-secondary); }
+.header-action:hover { color: var(--armoreum-text-strong); border-color: var(--armoreum-border-strong); background: var(--armoreum-surface-hover); }
+.header-wallet-action { color: var(--armoreum-accent-label); border-color: var(--armoreum-border-strong); background: var(--armoreum-accent-soft); }
+.header-wallet-action:hover { color: var(--armoreum-accent-label); border-color: var(--armoreum-accent-line); background: var(--armoreum-surface-hover); }
+.header-account-menu { color: var(--armoreum-text); border-color: var(--armoreum-border-strong); background: var(--armoreum-surface); box-shadow: 0 14px 34px var(--armoreum-shadow); }
+.header-account-menu a { color: var(--armoreum-text-secondary); }
+.header-account-menu a:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+.header-wallet-error { color: var(--armoreum-error); border-color: var(--armoreum-border-strong); background: var(--armoreum-surface); }
+.app-launcher-panel { color: var(--armoreum-text); border-color: var(--armoreum-border-strong); background: var(--armoreum-surface); box-shadow: 0 18px 48px var(--armoreum-shadow); }
+.app-launcher-item { color: var(--armoreum-text-secondary); border-color: var(--armoreum-border); }
+.app-launcher-item:hover { color: var(--armoreum-text-strong); border-color: var(--armoreum-accent-line); background: var(--armoreum-surface-hover); }
+.app-launcher-item.selected { color: var(--armoreum-accent-label); border-color: var(--armoreum-accent-line); background: var(--armoreum-accent-soft); }
+
+.page-header h1, .section-title h2, .content:not(:has(> .story-home)) :is(h2, h3, h4),
+.hero-copy h1, .hero-copy h2, .hero-story h2, .metric-value,
+.creator-launch-name strong, .launch-row strong {
+  color: var(--armoreum-text-strong);
+}
+.page-header p, .section-title p, .content:not(:has(> .story-home)) small, .metric-label, .metric-note,
+.hero-context, .hero-subtitle, .hero-support, .page-footer, .crumb {
+  color: var(--armoreum-text-muted);
+}
+.content .text-link, .content .external-link, .content .launch-links a,
+.content .launch-detail-link, .page-footer a, .armoreum-docs a {
+  color: var(--armoreum-accent-label);
+}
+.content .text-link:hover, .content .external-link:hover, .content .launch-links a:hover,
+.content .launch-detail-link:hover, .page-footer a:hover, .armoreum-docs a:hover {
+  color: var(--armoreum-accent-hover);
+}
+.button-primary { color: var(--armoreum-accent-text); border-color: var(--armoreum-accent); background: var(--armoreum-accent); }
+.button-primary:hover { background: var(--armoreum-accent-hover); }
+.button-secondary { color: var(--armoreum-text-secondary); border-color: var(--armoreum-border-strong); background: var(--armoreum-surface-raised); }
+.button-secondary:hover { color: var(--armoreum-text-strong); border-color: var(--armoreum-accent-line); background: var(--armoreum-surface-hover); }
+.button-disabled, .button:disabled { color: var(--armoreum-disabled-text); border-color: var(--armoreum-disabled-border); background: var(--armoreum-disabled-bg); cursor: not-allowed; opacity: 1; }
+
+.panel, .metric-grid, .metric, .launch-row, .state-box, .creator-address-card,
+.creator-launch-row, .creator-tab-panel, .unjail-step, .unjail-panel,
+.claim-flow-panel, .claim-step, .launch-panel, .explorer-panel, .activity-panel,
+.network-card, .network-unavailable, .integrity-card, .fee-panel, .fee-row,
+.funding-amount-card, .funding-qr-card, .wallet-provision-card, .image-preview-card,
+.risk-box, .blocked-box, .attribution-panel, .docs-intro, .doc-card,
+.armoreum-docs-sidebar, .armoreum-mobile-topic-panel, .armoreum-search-dialog, .armoreum-code,
+.armoreum-callout, .armoreum-table, .armoreum-flow-item, .armoreum-page-turn {
+  color: var(--armoreum-text);
+  border-color: var(--armoreum-border);
+  background-color: var(--armoreum-surface);
+}
+.panel, .metric-grid, .state-box, .creator-address-card, .creator-tab-panel,
+.unjail-step, .unjail-panel, .claim-flow-panel, .launch-panel, .explorer-panel,
+.activity-panel, .network-card, .network-unavailable, .integrity-card, .fee-panel,
+.funding-amount-card, .funding-qr-card, .wallet-provision-card, .image-preview-card,
+.risk-box, .blocked-box, .attribution-panel, .docs-intro, .doc-card {
+  box-shadow: 0 8px 24px var(--armoreum-shadow);
+}
+.metric-grid, .metric { background-color: var(--armoreum-surface-raised); }
+.launch-row:hover, .creator-launch-row:hover, .armoreum-search-result:hover { background-color: var(--armoreum-surface-hover); }
+.search-box, input, textarea, select, .file-input, .tax-input-wrap {
+  color: var(--armoreum-text);
+  border-color: var(--armoreum-border-strong);
+  background-color: var(--armoreum-input);
+}
+input::placeholder, textarea::placeholder { color: var(--armoreum-text-faint); }
+.status-pill.good { color: var(--armoreum-success-text); border-color: var(--armoreum-border-strong); background: var(--armoreum-success-bg); }
+.status-pill.warn { color: var(--armoreum-warn-text); border-color: var(--armoreum-warning-border); background: var(--armoreum-warn-bg); }
+.status-pill.bad, .creator-inline-error { color: var(--armoreum-danger-text); border-color: var(--armoreum-border-strong); background: var(--armoreum-danger-bg); }
+.notice-banner, .form-caution { color: var(--armoreum-warning-text); border-color: var(--armoreum-warning-border); background: var(--armoreum-warning-bg); }
+.notice-banner strong, .notice-banner p, .notice-banner > a { color: var(--armoreum-warning-text); }
+.token-badge { color: var(--armoreum-accent-label); border-color: var(--armoreum-border); background: var(--armoreum-accent-soft); }
+.table-wrap, .armoreum-table-wrap { border-color: var(--armoreum-border); }
+th, td, .activity-table th, .activity-table td, .armoreum-table th, .armoreum-table td { border-color: var(--armoreum-border); color: var(--armoreum-text-secondary); }
+.armoreum-search-overlay, .app-launcher-scrim { background: var(--armoreum-overlay); }
+.armoreum-search-dialog { box-shadow: 0 18px 60px var(--armoreum-shadow); }
+.armoreum-search-field, .armoreum-search-hint, .armoreum-doc-footer, .armoreum-doc-topline { border-color: var(--armoreum-border); }
+.armoreum-search-field input, .armoreum-search-result strong, .armoreum-doc-heading h1, .armoreum-doc-heading h2,
+.armoreum-doc-prose h2, .armoreum-doc-prose h3, .armoreum-doc-prose strong { color: var(--armoreum-text-strong); }
+.armoreum-search-field, .armoreum-search-result, .armoreum-search-hint, .armoreum-breadcrumb, .armoreum-doc-heading > p,
+.armoreum-doc-prose, .armoreum-doc-footer, .armoreum-read-state { color: var(--armoreum-text-muted); }
+.armoreum-doc-link { color: var(--armoreum-text-muted); }
+.armoreum-doc-link.active { color: var(--armoreum-accent-label); background: var(--armoreum-accent-soft); }
+.armoreum-docs-mobile-head { border-color: var(--armoreum-border); background: var(--armoreum-header); }
+.armoreum-docs-brand { color: var(--armoreum-text-secondary); }
+.armoreum-docs-brand small { color: var(--armoreum-text-faint); }
+.armoreum-mobile-docs-brand { color: var(--armoreum-text-strong); }
+.armoreum-mobile-docs-mark { color: var(--armoreum-accent-label); border-color: var(--armoreum-border-strong); background: var(--armoreum-accent-soft); }
+.armoreum-mobile-menu, .armoreum-mobile-search, .armoreum-search-trigger { color: var(--armoreum-text-secondary); border-color: var(--armoreum-border); background: var(--armoreum-surface-raised); }
+.armoreum-code pre { color: var(--armoreum-text-secondary); background: var(--armoreum-surface-raised); }
+.armoreum-code-head { border-color: var(--armoreum-border); }
+.armoreum-code-head button { color: var(--armoreum-accent-label); }
+.armoreum-callout.status { border-color: var(--armoreum-warning-border); background: var(--armoreum-warning-bg); }
+.armoreum-doc-footer a { color: var(--armoreum-accent-label); }
+
+.hero-story, .hero-copy, .security-model-section {
+  background-image: linear-gradient(135deg, var(--armoreum-gradient-green), transparent 58%), linear-gradient(320deg, var(--armoreum-gradient-warm), transparent 55%);
+}
+.page-footer { border-color: var(--armoreum-border); }
+.sidebar-chain .chain-mark { color: #303536; background: #eeeae0; }
+
+html[data-header-scrolled="true"] .site-header,
+html[data-header-scrolled="true"] .armoreum-docs-mobile-head {
+  background-color: var(--armoreum-header-scrolled);
+  border-bottom-color: var(--armoreum-border-strong);
+  box-shadow: 0 5px 20px var(--armoreum-shadow);
+}
+
+@media (min-width: 701px) {
+  .site-header {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .18s ease, visibility 0s linear .22s,
+      background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  html[data-header-scrolled="true"] .site-header {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .22s ease, opacity .18s ease, visibility 0s,
+      background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+}
+
+@media (min-width: 701px) {
+  .app-frame.top-nav-layout:not(.landing-route) .site-header {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+}
+
+html[data-scroll-top="true"]::before,
+html[data-scroll-bottom="true"]::after {
+  content: "";
+  position: fixed;
+  z-index: 45;
+  right: 0;
+  left: 0;
+  height: 18px;
+  pointer-events: none;
+}
+html[data-scroll-top="true"]::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--armoreum-page), transparent);
+}
+html[data-scroll-bottom="true"]::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--armoreum-page), transparent);
+}
+
+/* The cinematic landing has its own edge treatment; page-colored scroll masks
+   must not add a light strip over its dark first viewport. */
+html:has(.story-home)::before,
+html:has(.story-home)::after { content: none; }
+html:has(.story-home),
+body:has(.story-home) { overflow-x: clip; }
+
+html[data-theme="light"] .content:not(:has(> .story-home)) { background: transparent; }
+html[data-theme="light"] .page-header h1,
+html[data-theme="light"] .section-title h2,
+html[data-theme="light"] .content:not(:has(> .story-home)) :is(h2, h3, h4, strong, label, li, td, th, span, p, legend),
+html[data-theme="light"] .armoreum-docs :is(h1, h2, h3, h4, p, li, span, strong, small, td, th, label, code, kbd) {
+  color: var(--armoreum-text);
+}
+html[data-theme="light"] .page-header h1,
+html[data-theme="light"] .content:not(:has(> .story-home)) :is(h1, h2, h3, strong),
+html[data-theme="light"] .armoreum-doc-heading h1,
+html[data-theme="light"] .armoreum-doc-prose h2,
+html[data-theme="light"] .armoreum-doc-prose h3,
+html[data-theme="light"] .armoreum-doc-prose strong {
+  color: var(--armoreum-text-strong);
+}
+html[data-theme="light"] .page-header p,
+html[data-theme="light"] .section-title p,
+html[data-theme="light"] .content:not(:has(> .story-home)) small,
+html[data-theme="light"] .metric-label,
+html[data-theme="light"] .metric-note,
+html[data-theme="light"] .hero-context,
+html[data-theme="light"] .hero-subtitle,
+html[data-theme="light"] .hero-support,
+html[data-theme="light"] .armoreum-doc-heading > p,
+html[data-theme="light"] .armoreum-doc-prose,
+html[data-theme="light"] .armoreum-doc-footer,
+html[data-theme="light"] .armoreum-breadcrumb,
+html[data-theme="light"] .armoreum-read-state {
+  color: var(--armoreum-text-muted);
+}
+html[data-theme="light"] .hero-story,
+html[data-theme="light"] .hero-copy,
+html[data-theme="light"] .security-model-section {
+  border-color: var(--armoreum-border);
+  background-color: var(--armoreum-surface);
+}
+html[data-theme="light"] .armoreum-docs,
+html[data-theme="light"] .armoreum-docs-sidebar,
+html[data-theme="light"] .armoreum-doc-article,
+html[data-theme="light"] .armoreum-docs-mobile-head { color: var(--armoreum-text); }
+html[data-theme="light"] .armoreum-docs-sidebar { background: var(--armoreum-sidebar); }
+html[data-theme="light"] .armoreum-docs-brand,
+html[data-theme="light"] .armoreum-mobile-docs-brand { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .armoreum-mobile-menu,
+html[data-theme="light"] .armoreum-mobile-search,
+html[data-theme="light"] .armoreum-search-trigger,
+html[data-theme="light"] .armoreum-search-result,
+html[data-theme="light"] .armoreum-page-turn { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .armoreum-table th { color: var(--armoreum-text-strong); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-table td,
+html[data-theme="light"] .activity-table td { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .armoreum-code { background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-code pre { color: #36433b; background: #f1f4ef; }
+html[data-theme="light"] .armoreum-callout { color: var(--armoreum-text-secondary); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-callout.status { color: var(--armoreum-warning-text); }
+html[data-theme="light"] .armoreum-doc-footer a { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .status-pill.good,
+html[data-theme="light"] .status-pill.warn,
+html[data-theme="light"] .status-pill.bad { font-weight: 600; }
+html[data-theme="light"] .page-footer a,
+html[data-theme="light"] .content .text-link,
+html[data-theme="light"] .content .external-link,
+html[data-theme="light"] .content .launch-links a,
+html[data-theme="light"] .content .launch-detail-link { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .site-brand-lockup,
+html[data-theme="light"] .header-action,
+html[data-theme="light"] .app-launcher-icon { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .header-wallet-action { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .nav-link.selected,
+html[data-theme="light"] .nav-link.selected .nav-link-label,
+html[data-theme="light"] .nav-link.selected svg { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .app-launcher-item.selected,
+html[data-theme="light"] .app-launcher-item.selected span,
+html[data-theme="light"] .app-launcher-item.selected svg { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .status-pill.good { color: var(--armoreum-success-text); background: var(--armoreum-success-bg); }
+html[data-theme="light"] .status-pill.warn { color: var(--armoreum-warn-text); background: var(--armoreum-warn-bg); }
+html[data-theme="light"] .status-pill.bad,
+html[data-theme="light"] .app-frame .creator-inline-error { color: var(--armoreum-danger-text); background: var(--armoreum-danger-bg); }
+html[data-theme="light"] .app-frame .header-wallet-error { color: var(--armoreum-danger-text); }
+html[data-theme="light"] .notice-banner,
+html[data-theme="light"] .form-caution { color: var(--armoreum-warning-text); background: var(--armoreum-warning-bg); }
+html[data-theme="light"] .notice-banner strong,
+html[data-theme="light"] .notice-banner p,
+html[data-theme="light"] .notice-banner > a { color: var(--armoreum-warning-text); }
+html[data-theme="light"] .button-primary,
+html[data-theme="light"] .button-primary span,
+html[data-theme="light"] .button-primary svg { color: var(--armoreum-accent-text); }
+html[data-theme="light"] input,
+html[data-theme="light"] textarea,
+html[data-theme="light"] select,
+html[data-theme="light"] .search-box input { color: var(--armoreum-text); border-color: var(--armoreum-border-strong); background-color: var(--armoreum-input); }
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder { color: var(--armoreum-text-faint); }
+html[data-theme="light"] input:disabled,
+html[data-theme="light"] textarea:disabled,
+html[data-theme="light"] select:disabled { color: var(--armoreum-text-faint); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] *:focus-visible { outline-color: #456b4e; }
+html[data-theme="light"] .armoreum-docs { background: var(--armoreum-page); color: var(--armoreum-text); }
+html[data-theme="light"] .armoreum-docs-sidebar,
+html[data-theme="light"] .armoreum-docs-mobile-head { background: var(--armoreum-sidebar); border-color: var(--armoreum-border); }
+html[data-theme="light"] .armoreum-doc-article { background: transparent; }
+html[data-theme="light"] .armoreum-docs-brand-icon,
+html[data-theme="light"] .armoreum-mobile-docs-mark { color: var(--armoreum-accent-label); border-color: var(--armoreum-border); background: var(--armoreum-accent-soft); }
+html[data-theme="light"] .armoreum-docs-brand strong,
+html[data-theme="light"] .armoreum-doc-heading h1,
+html[data-theme="light"] .armoreum-breadcrumb strong,
+html[data-theme="light"] .armoreum-doc-prose h2,
+html[data-theme="light"] .armoreum-doc-prose h3,
+html[data-theme="light"] .armoreum-doc-prose strong,
+html[data-theme="light"] .armoreum-page-turn strong { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .armoreum-docs-brand small,
+html[data-theme="light"] .armoreum-nav-group h2,
+html[data-theme="light"] .armoreum-sidebar-foot,
+html[data-theme="light"] .armoreum-breadcrumb,
+html[data-theme="light"] .armoreum-read-state,
+html[data-theme="light"] .armoreum-doc-heading > p,
+html[data-theme="light"] .armoreum-doc-prose,
+html[data-theme="light"] .armoreum-doc-footer,
+html[data-theme="light"] .armoreum-doc-link,
+html[data-theme="light"] .armoreum-doc-link small,
+html[data-theme="light"] .armoreum-page-turn span { color: var(--armoreum-text-muted); }
+html[data-theme="light"] .armoreum-docs-nav,
+html[data-theme="light"] .armoreum-doc-topline,
+html[data-theme="light"] .armoreum-sidebar-foot,
+html[data-theme="light"] .armoreum-doc-pagination,
+html[data-theme="light"] .armoreum-doc-footer { border-color: var(--armoreum-border); }
+html[data-theme="light"] .armoreum-doc-link:hover,
+html[data-theme="light"] .armoreum-page-turn:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+html[data-theme="light"] .armoreum-doc-link.active { color: var(--armoreum-accent-label); background: var(--armoreum-accent-soft); box-shadow: inset 2px 0 var(--armoreum-accent-line); }
+html[data-theme="light"] .armoreum-doc-prose a,
+html[data-theme="light"] .armoreum-doc-footer a,
+html[data-theme="light"] .armoreum-breadcrumb a,
+html[data-theme="light"] .armoreum-table code { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .armoreum-doc-prose code:not(.armoreum-code code) { color: var(--armoreum-accent-label); border-color: var(--armoreum-border); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-callout { color: var(--armoreum-text-secondary); border-color: var(--armoreum-border); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-callout strong { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .armoreum-callout p { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .armoreum-callout.status { color: var(--armoreum-warning-text); border-color: var(--armoreum-warning-border); background: var(--armoreum-warning-bg); }
+html[data-theme="light"] .armoreum-callout.status strong,
+html[data-theme="light"] .armoreum-callout.status p { color: var(--armoreum-warning-text); }
+html[data-theme="light"] .armoreum-table-wrap,
+html[data-theme="light"] .armoreum-table td,
+html[data-theme="light"] .armoreum-table th,
+html[data-theme="light"] .armoreum-code,
+html[data-theme="light"] .armoreum-code-head,
+html[data-theme="light"] .armoreum-page-turn { border-color: var(--armoreum-border); }
+html[data-theme="light"] .armoreum-table tr:hover td { background: var(--armoreum-surface-hover); }
+html[data-theme="light"] .armoreum-flow-item,
+html[data-theme="light"] .armoreum-page-turn { color: var(--armoreum-text-secondary); background: var(--armoreum-surface); }
+html[data-theme="light"] .armoreum-flow-item strong,
+html[data-theme="light"] .armoreum-code-head { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .armoreum-flow-no,
+html[data-theme="light"] .armoreum-flow-arrow { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .armoreum-code { background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-code-head { background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-code pre { color: #36433b; background: #f1f4ef; }
+html[data-theme="light"] .armoreum-code-head button { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .armoreum-code-head button:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+html[data-theme="light"] .armoreum-mobile-menu,
+html[data-theme="light"] .armoreum-mobile-search,
+html[data-theme="light"] .armoreum-search-trigger { color: var(--armoreum-text-secondary); border-color: var(--armoreum-border); background: var(--armoreum-surface-raised); }
+html[data-theme="light"] .armoreum-mobile-topic-panel { color: var(--armoreum-text); border-color: var(--armoreum-border); background: var(--armoreum-surface); box-shadow: 0 14px 32px var(--armoreum-shadow); }
+html[data-theme="light"] .armoreum-search-overlay { background: var(--armoreum-overlay); }
+html[data-theme="light"] .armoreum-search-dialog { color: var(--armoreum-text); border-color: var(--armoreum-border); background: var(--armoreum-surface); box-shadow: 0 18px 60px var(--armoreum-shadow); }
+html[data-theme="light"] .armoreum-search-field,
+html[data-theme="light"] .armoreum-search-hint { color: var(--armoreum-text-muted); border-color: var(--armoreum-border); }
+html[data-theme="light"] .armoreum-search-field input { color: var(--armoreum-text); background: transparent; }
+html[data-theme="light"] .armoreum-search-field input::placeholder,
+html[data-theme="light"] .armoreum-search-result small,
+html[data-theme="light"] .armoreum-search-empty { color: var(--armoreum-text-faint); }
+html[data-theme="light"] .armoreum-search-result { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .armoreum-search-result strong { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .armoreum-search-result:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+html[data-theme="light"] .armoreum-search-field button { color: var(--armoreum-text-muted); }
+html[data-theme="light"] .armoreum-search-field button:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+
+html[data-theme="light"] .flow-status-note { color: var(--armoreum-warning-text); border-color: var(--armoreum-warning-border); background: var(--armoreum-warning-bg); }
+html[data-theme="light"] .flow-status-note a { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .flow-section,
+html[data-theme="light"] .flow-step,
+html[data-theme="light"] .product-flow { border-color: var(--armoreum-border); }
+html[data-theme="light"] .flow-intro { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .flow-trigger strong { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .flow-number,
+html[data-theme="light"] .flow-chevron { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .flow-detail { color: var(--armoreum-text-muted); }
+html[data-theme="light"] .key-node strong { color: #edede7; }
+html[data-theme="light"] .key-node > span { color: #e0c98d; }
+html[data-theme="light"] .key-node.protected > span { color: #c1d4c3; }
+html[data-theme="light"] .key-node small { color: #adb6af; }
+html[data-theme="light"] .hero-support { color: var(--armoreum-text-muted); }
+
+@media (max-width: 360px) {
+  .site-brand-lockup strong { font-size: 16px; }
+  .mobile-brand-mark { width: 17px; height: 17px; }
+  .site-header-actions { gap: 3px; }
+  .header-action { min-width: 32px; padding: 0 5px; font-size: 9px; }
+  .theme-toggle-header { width: 32px; height: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+.armoreum-logo-mark {
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+.armoreum-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.armoreum-logo-image-dark {
+  display: none;
+}
+html[data-theme="dark"] .armoreum-logo-mark {
+  background-image: none !important;
+}
+html[data-theme="dark"] .armoreum-logo-image-light {
+  display: none;
+}
+html[data-theme="dark"] .armoreum-logo-image-dark {
+  display: block;
+}
+
+:root[data-theme="light"] .button:disabled,
+:root[data-theme="light"] .button-disabled {
+  color: var(--armoreum-disabled-text) !important;
+  background: var(--armoreum-disabled-bg) !important;
+  border-color: var(--armoreum-disabled-border) !important;
+  opacity: 1 !important;
+}
+
+:root[data-theme="light"] .content .button:disabled,
+:root[data-theme="light"] .content .button.button-disabled {
+  color: var(--armoreum-disabled-text) !important;
+  -webkit-text-fill-color: var(--armoreum-disabled-text) !important;
+  background-color: var(--armoreum-disabled-bg) !important;
+  border-color: var(--armoreum-disabled-border) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Token detail: beat the light-mode blanket .content span/strong/label rules */
+html[data-theme] .content .token-terminal { color: var(--armoreum-text); }
+html[data-theme] .content .token-terminal :is(.copy-address, .copy-address span) { color: var(--armoreum-accent-label); }
+html[data-theme] .content .token-terminal :is(.tt-metric strong, .tt-name-line h1, .tt-stage strong, .tt-destination strong, .tt-progress-number, .tt-progress-meta strong, .tt-fee p, .tt-section-head h2, .tt-progress-head h2, .tt-chart-price) { color: var(--armoreum-text-strong); }
+html[data-theme] .content .token-terminal :is(.tt-metric label, .tt-metric small, .tt-eyebrow, .tt-name-line > span, .tt-info-row > span, .tt-stage small, .tt-fee small, .tt-fee h3, .tt-section-head p, .tt-source span, .tt-destination > small) { color: var(--armoreum-text-muted); }
+html[data-theme] .content .token-terminal :is(.tt-info-row > div, .tt-addressline > span:not(.copy-address)) { color: var(--armoreum-text-secondary); }
+html[data-theme] .content .token-terminal :is(.tt-tag.is-status, .tt-stage.current > span:last-child) { color: var(--armoreum-accent-label); }
+html[data-theme] .content .token-terminal .tt-metric label, .tt-metric strong, .tt-metric small { display: block; }
+.creator-private-key { color: var(--armoreum-accent-label); background: var(--armoreum-surface-raised); border-color: var(--armoreum-border-strong); }
+
+/* ---- Shared contrast pass: semantic tokens for tabs, controls and hardcoded dark-theme foregrounds ---- */
+.creator-tabs { border-color: var(--armoreum-border); }
+.creator-tab { color: var(--armoreum-text-muted); }
+.creator-tab:hover { color: var(--armoreum-text-strong); background: var(--armoreum-surface-hover); }
+.creator-tab.selected, .creator-tab[aria-selected="true"] { color: var(--armoreum-accent-label); border-bottom-color: var(--armoreum-accent-line); background: var(--armoreum-accent-soft); font-weight: 600; }
+.creator-tab:focus-visible { outline-color: var(--armoreum-accent-line); }
+html[data-theme="light"] .content:not(:has(> .story-home)) :where(.creator-tab, .tt-intervals button, .tt-refresh, .wizard-step, .copy-address, .launch-detail-link, .text-link, .external-link, .back-link) { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .content .creator-tab.selected,
+html[data-theme="light"] .content .tt-intervals button.selected,
+html[data-theme="light"] .content .wizard-step.active,
+html[data-theme="light"] .content .wizard-step.done,
+html[data-theme="light"] .content .copy-address,
+html[data-theme="light"] .content .back-link,
+html[data-theme="light"] .content .tt-trader-link { color: var(--armoreum-accent-label); }
+html[data-theme="light"] .content .tt-intervals button.selected { background: var(--armoreum-accent-soft); }
+html[data-theme="light"] .content .button-secondary,
+html[data-theme="light"] .content .tt-action { color: var(--armoreum-text-secondary); }
+html[data-theme="light"] .content .button-secondary:hover,
+html[data-theme="light"] .content .tt-action:hover { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .content :is(.creator-private-key, code.mono, .mono) { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .content .tt-candle-label { fill: var(--armoreum-text-muted); }
+html[data-theme="light"] .sidebar .nav-link:not(.selected) { color: var(--armoreum-text-muted); }
+html[data-theme="light"] .sidebar .nav-count { color: var(--armoreum-accent-label); border-color: var(--armoreum-border-strong); }
+html[data-theme="light"] .sidebar :is(.identity-callout strong) { color: var(--armoreum-text-strong); }
+html[data-theme="light"] .sidebar :is(.identity-callout, .identity-callout p) { color: var(--armoreum-text-secondary); background-color: var(--armoreum-surface-raised); border-color: var(--armoreum-border); }
+
+/* Semantic pairs that blanket light-mode span/strong rules would otherwise flatten */
+html[data-theme] .content .tt-trade-side.is-buy { color: var(--armoreum-success-text); }
+html[data-theme] .content .tt-trade-side.is-sell { color: var(--armoreum-danger-text); }
+html[data-theme] .content .tt-index-status { color: var(--armoreum-text-secondary); }
+html[data-theme] .content .jail-un-jail-tabs button[aria-selected="true"] { color: var(--armoreum-accent-label); font-weight: 600; }
+html[data-theme] .content .jail-un-jail-tabs button:not([aria-selected="true"]) { color: var(--armoreum-text-muted); }
+html[data-theme] .content .status-pill.good, html[data-theme] .content .status-pill.good span { color: var(--armoreum-success-text); }
+html[data-theme] .content .status-pill.warn, html[data-theme] .content .status-pill.warn span { color: var(--armoreum-warn-text); }
+html[data-theme] .content .status-pill.bad, html[data-theme] .content .status-pill.bad span { color: var(--armoreum-danger-text); }
+html[data-theme] .content .button-primary, html[data-theme] .content .button-primary :is(span, svg) { color: var(--armoreum-accent-text); }
+html[data-theme] .content .button:disabled, html[data-theme] .content .button:disabled :is(span, svg) { color: var(--armoreum-disabled-text); }

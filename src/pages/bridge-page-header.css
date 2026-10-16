@@ -1,0 +1,94 @@
+.bridge-page-header {
+  display: grid;
+  gap: 17px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--armoreum-border);
+}
+
+.bridge-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bridge-page-heading-icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--armoreum-border-strong);
+  border-radius: 13px;
+  background: var(--armoreum-accent-soft);
+  color: var(--armoreum-accent-label);
+}
+
+.bridge-page-title { min-width: 0; }
+.bridge-page-eyebrow {
+  display: block;
+  color: var(--armoreum-text-secondary);
+  font: 500 9px/1.5 var(--app-font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.bridge-page-title h1 {
+  margin: 4px 0 0;
+  color: var(--armoreum-text-strong);
+  font: 600 clamp(34px, 4vw, 44px)/1.1 var(--app-font-serif);
+  letter-spacing: -.04em;
+}
+
+.bridge-page-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.bridge-page-networks {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--armoreum-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.bridge-page-networks > span { white-space: nowrap; }
+.bridge-page-networks > svg { flex: 0 0 14px; color: var(--armoreum-accent-label); }
+
+.bridge-page-scope {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 7px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--armoreum-border);
+  border-radius: 999px;
+  background: var(--armoreum-surface-raised);
+  color: var(--armoreum-text-secondary);
+  font: 10px/1.4 var(--app-font-mono);
+}
+.bridge-page-scope > span:first-child {
+  flex: 0 0 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--armoreum-accent-label);
+}
+
+.bridge-page-description {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--armoreum-text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .bridge-page-header { gap: 15px; padding-bottom: 23px; }
+  .bridge-page-header-meta { display: grid; justify-content: start; gap: 12px; }
+}

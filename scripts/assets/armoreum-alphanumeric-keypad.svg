@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#f5f5f2"/>
+  <g fill="#171a19" font-family="DejaVu Sans, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="132" y="72" font-size="35">0</text>
+    <text x="290" y="70" font-size="18" letter-spacing="1">ENTER</text>
+
+    <text x="64" y="199" font-size="34">7</text>
+    <text x="64" y="222" font-size="13" letter-spacing="1">PQRS</text>
+    <text x="196" y="199" font-size="34">8</text>
+    <text x="196" y="222" font-size="13" letter-spacing="1">TUV</text>
+    <text x="332" y="199" font-size="34">9</text>
+    <text x="332" y="222" font-size="13" letter-spacing="1">WXYZ</text>
+
+    <text x="64" y="328" font-size="34">4</text>
+    <text x="64" y="351" font-size="13" letter-spacing="1">GHI</text>
+    <text x="196" y="328" font-size="34">5</text>
+    <text x="196" y="351" font-size="13" letter-spacing="1">JKL</text>
+    <text x="332" y="328" font-size="34">6</text>
+    <text x="332" y="351" font-size="13" letter-spacing="1">MNO</text>
+
+    <text x="64" y="452" font-size="34">1</text>
+    <text x="196" y="452" font-size="34">2</text>
+    <text x="196" y="475" font-size="13" letter-spacing="1">ABC</text>
+    <text x="332" y="452" font-size="34">3</text>
+    <text x="332" y="475" font-size="13" letter-spacing="1">DEF</text>
+  </g>
+</svg>

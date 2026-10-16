@@ -1,0 +1,169 @@
+.my-jail-page {
+  --jail-line: var(--armoreum-border);
+  --jail-line-strong: var(--armoreum-border-strong);
+  --jail-surface: var(--armoreum-surface);
+  --jail-raised: var(--armoreum-surface-raised);
+  --jail-ink: var(--armoreum-text-strong);
+  --jail-copy: var(--armoreum-text-secondary);
+  --jail-muted: var(--armoreum-text-muted);
+  --jail-accent: var(--armoreum-accent-label);
+  width: min(1120px, 100%);
+  padding: 35px 42px 36px;
+}
+
+.jail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 4px 0 22px;
+}
+.jail-kicker, .jail-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--jail-muted);
+  font: 9px/1.4 var(--app-font-mono);
+  letter-spacing: .12em;
+}
+.jail-kicker-mark { display: inline-grid; place-items: center; width: 22px; height: 22px; color: var(--jail-accent); border: 1px solid var(--jail-line-strong); border-radius: 5px; background: var(--armoreum-accent-soft); }
+.jail-heading h1 { margin: 13px 0 5px; color: var(--jail-ink); font: 600 clamp(31px, 4vw, 42px)/1.05 var(--app-font-serif); letter-spacing: -1.3px; }
+.jail-heading p { margin: 9px 0 0; color: var(--jail-muted); font-size: 12px; line-height: 1.6; }
+.jail-icon-button { display: grid; place-items: center; width: 38px; height: 38px; margin-top: 3px; color: var(--jail-copy); border: 1px solid var(--jail-line-strong); border-radius: 5px; background: var(--jail-surface); cursor: pointer; transition: color .16s, border-color .16s, transform .16s; }
+.jail-icon-button:hover:not(:disabled) { color: var(--jail-accent); border-color: var(--armoreum-accent-line); }
+.jail-icon-button:active:not(:disabled) { transform: translateY(1px); }
+.jail-icon-button:disabled { opacity: .55; cursor: not-allowed; }
+
+.jail-context-bar { min-height: 42px; display: flex; align-items: center; gap: 12px; padding: 0 13px; margin-bottom: 19px; border: 1px solid var(--jail-line); border-radius: 5px; background: color-mix(in srgb, var(--jail-surface) 76%, transparent); color: var(--jail-muted); font: 10px var(--app-font-mono); }
+.jail-context-wallet { min-width: 0; display: inline-flex; align-items: center; gap: 8px; color: var(--jail-copy); }
+.jail-context-wallet > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jail-status-light { width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--jail-muted); }
+.jail-status-light.is-connected { background: var(--armoreum-success-text); }
+.jail-context-divider { width: 1px; height: 15px; background: var(--jail-line-strong); }
+.jail-context-network { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jail-busy-label { margin-left: auto; color: var(--jail-accent); text-transform: capitalize; }
+.jail-chain-picker { display: flex; align-items: center; gap: 8px; margin: -3px 0 17px; padding: 7px; border: 1px solid var(--jail-line); border-radius: 6px; background: color-mix(in srgb, var(--jail-surface) 78%, transparent); }
+.jail-chain-picker-label { padding: 0 9px; color: var(--jail-muted); font: 9px var(--app-font-mono); letter-spacing: .1em; }
+.jail-chain-option { position: relative; min-width: 140px; min-height: 36px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 13px; color: var(--jail-copy); border: 1px solid transparent; border-radius: 4px; background: transparent; font-size: 11px; cursor: pointer; transition: color .16s, border-color .16s, background .16s; }
+.jail-chain-option:hover:not(:disabled) { color: var(--jail-ink); background: var(--armoreum-surface-hover); }
+.jail-chain-option.is-selected { color: var(--armoreum-accent-label); border-color: var(--armoreum-accent-line); background: var(--armoreum-accent-soft); }
+.jail-chain-option:disabled { cursor: wait; opacity: .7; }
+.jail-chain-option small { color: var(--jail-muted); font: 9px var(--app-font-mono); }
+.jail-chain-progress { color: var(--jail-muted); font-size: 9px; }
+.jail-network-switch-error { margin: -8px 0 17px; }
+
+.jail-state-panel { min-height: 154px; display: flex; align-items: center; gap: 17px; padding: 23px; border: 1px solid var(--jail-line); border-radius: 6px; background: var(--jail-surface); box-shadow: 0 8px 24px var(--armoreum-shadow); }
+.jail-state-icon { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; color: var(--jail-accent); border: 1px solid var(--jail-line-strong); border-radius: 6px; background: var(--armoreum-accent-soft); }
+.jail-state-copy { min-width: 0; flex: 1; }
+.jail-state-copy h2, .jail-state-panel h2 { margin: 7px 0 5px; color: var(--jail-ink); font: 600 20px/1.25 var(--app-font-serif); letter-spacing: -.35px; }
+.jail-state-copy p, .jail-state-panel p { max-width: 590px; margin: 0; color: var(--jail-muted); font-size: 11px; line-height: 1.6; }
+.jail-state-warning { border-color: var(--armoreum-warning-border); }
+.jail-state-warning .jail-state-icon { color: var(--armoreum-warn-text); border-color: var(--armoreum-warning-border); background: var(--armoreum-warn-bg); }
+.jail-state-error { border-color: var(--armoreum-border-strong); }
+.jail-state-error .jail-state-icon { color: var(--armoreum-danger-text); border-color: var(--armoreum-border-strong); background: var(--armoreum-danger-bg); }
+.jail-action { min-height: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0 11px; color: var(--jail-copy); border: 1px solid var(--jail-line-strong); border-radius: 4px; background: var(--jail-raised); font: 600 10px/1 var(--app-font-sans); white-space: nowrap; cursor: pointer; transition: color .15s, border-color .15s, background .15s, transform .15s; }
+.jail-action:hover:not(:disabled) { color: var(--jail-ink); border-color: var(--armoreum-accent-line); background: var(--armoreum-surface-hover); }
+.jail-action:active:not(:disabled) { transform: translateY(1px); }
+.jail-action:disabled { color: var(--armoreum-disabled-text); border-color: var(--armoreum-disabled-border); background: var(--armoreum-disabled-bg); cursor: not-allowed; }
+.jail-action-primary { color: var(--armoreum-accent-text); border-color: var(--armoreum-accent); background: var(--armoreum-accent); }
+.jail-action-primary:hover:not(:disabled) { color: var(--armoreum-accent-text); background: var(--armoreum-accent-hover); }
+.jail-loading { position: relative; }
+.jail-loading .jail-state-icon svg { animation: jail-turn 1.5s linear infinite; }
+.jail-skeletons { width: min(210px, 25%); display: grid; gap: 7px; margin-left: auto; }
+.jail-skeletons i { height: 9px; border-radius: 8px; background: var(--jail-raised); animation: jail-pulse 1.5s ease-in-out infinite alternate; }
+.jail-skeletons i:nth-child(2) { width: 76%; }
+.jail-skeletons i:nth-child(3) { width: 53%; }
+@keyframes jail-pulse { from { opacity: .55; } to { opacity: .92; } }
+@keyframes jail-turn { to { transform: rotate(360deg); } }
+
+.jail-balance-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 13px; margin-bottom: 27px; }
+.jail-balance-card { min-width: 0; position: relative; padding: 17px 18px 15px; border: 1px solid var(--jail-line); border-radius: 6px; background: var(--jail-surface); box-shadow: 0 8px 24px var(--armoreum-shadow); }
+.vault-balance { background: linear-gradient(125deg, var(--armoreum-accent-soft), var(--jail-surface) 64%); border-color: var(--jail-line-strong); }
+.jail-card-top { display: flex; align-items: center; gap: 9px; }
+.jail-balance-icon { width: 29px; height: 29px; display: grid; place-items: center; color: var(--jail-accent); border: 1px solid var(--jail-line-strong); border-radius: 5px; background: var(--jail-raised); }
+.jail-location-tag { color: var(--jail-muted); font: 8px var(--app-font-mono); letter-spacing: .1em; }
+.jail-balance-label { margin: 18px 0 8px; color: var(--jail-muted); font-size: 10px; }
+.jail-balance-value { display: block; color: var(--jail-ink); font: 600 clamp(23px, 3vw, 30px)/1.1 var(--app-font-serif); letter-spacing: -.5px; }
+.jail-balance-value small { color: var(--jail-muted); font: 500 11px var(--app-font-mono); letter-spacing: 0; }
+.jail-address { display: block; overflow: hidden; margin-top: 10px; color: var(--jail-muted); font: 9px var(--app-font-mono); text-overflow: ellipsis; white-space: nowrap; }
+.jail-vault-actions { display: flex; gap: 7px; margin-top: 14px; }
+
+.jail-positions { margin-top: 3px; }
+.jail-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 15px; padding-bottom: 13px; border-bottom: 1px solid var(--jail-line-strong); }
+.jail-section-heading h2 { margin: 6px 0 0; color: var(--jail-ink); font: 600 20px/1.2 var(--app-font-serif); letter-spacing: -.4px; }
+.jail-position-count { color: var(--jail-muted); font: 9px var(--app-font-mono); }
+.jail-empty { min-height: 124px; display: flex; align-items: center; gap: 13px; padding: 21px 16px; border-bottom: 1px solid var(--jail-line); }
+.jail-empty-mark { width: 36px; height: 36px; display: grid; place-items: center; color: var(--jail-accent); border: 1px solid var(--jail-line); border-radius: 5px; background: var(--jail-raised); }
+.jail-empty h3 { margin: 0 0 5px; color: var(--jail-ink); font: 600 14px var(--app-font-serif); }
+.jail-empty p { margin: 0; color: var(--jail-muted); font-size: 10px; line-height: 1.5; }
+.jail-position { min-width: 0; padding: 16px 0 13px; border-bottom: 1px solid var(--jail-line); }
+.jail-position-head { display: flex; align-items: center; gap: 11px; }
+.jail-token-mark { width: 35px; height: 35px; flex: 0 0 auto; display: grid; place-items: center; color: var(--jail-accent); border: 1px solid var(--jail-line-strong); border-radius: 50%; background: var(--armoreum-accent-soft); font: 600 14px var(--app-font-serif); }
+.jail-position-name { min-width: 0; flex: 1; }
+.jail-position-name h3 { overflow: hidden; margin: 0; color: var(--jail-ink); font: 600 13px var(--app-font-sans); text-overflow: ellipsis; white-space: nowrap; }
+.jail-position-name h3 span { margin-left: 3px; color: var(--jail-muted); font: 10px var(--app-font-mono); }
+.jail-launch-id { display: block; margin-top: 5px; color: var(--jail-muted); font: 8px var(--app-font-mono); }
+.jail-position-actions { display: flex; gap: 6px; }
+.jail-position-actions .jail-action { min-height: 30px; }
+.jail-receipts { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 13px 0 0 46px; }
+.jail-receipt { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 7px 12px; padding: 11px 12px; border: 1px solid var(--jail-line); border-radius: 5px; background: var(--jail-surface); }
+.jail-receipt-heading { min-width: 0; display: flex; align-items: center; gap: 7px; color: var(--jail-copy); font-size: 10px; font-weight: 600; }
+.jail-receipt-symbol { width: 22px; height: 22px; display: grid; place-items: center; color: var(--jail-accent); border: 1px solid var(--jail-line-strong); border-radius: 4px; background: var(--armoreum-accent-soft); font: 8px var(--app-font-mono); }
+.jail-receipt > strong { color: var(--jail-ink); font: 500 13px var(--app-font-mono); text-align: right; overflow-wrap: anywhere; }
+.jail-receipt > strong small { color: var(--jail-muted); font: 9px var(--app-font-mono); }
+.jail-receipt-address { grid-column: 1 / -1; overflow: hidden; color: var(--jail-muted); font: 8px var(--app-font-mono); text-overflow: ellipsis; white-space: nowrap; }
+.jail-receipt-actions { grid-column: 1 / -1; display: flex; gap: 6px; }
+.jail-receipt-actions .jail-action { min-height: 28px; padding-inline: 8px; font-size: 9px; }
+.jail-footnote { display: flex; align-items: center; gap: 8px; margin-top: 15px; color: var(--jail-muted); font-size: 9px; line-height: 1.5; }
+.jail-footnote svg { flex: 0 0 auto; color: var(--jail-accent); }
+.my-jail-page :is(button):focus-visible { outline: 2px solid var(--armoreum-accent-line); outline-offset: 2px; }
+.my-jail-action-dialog { width: min(480px, calc(100vw - 28px)); max-height: min(720px, calc(100dvh - 32px)); overflow-y: auto; padding: 22px; color: var(--armoreum-text-strong); border: 1px solid var(--armoreum-border-strong); background: var(--armoreum-surface); }
+.my-jail-action-dialog [data-slot="dialog-description"] { color: var(--armoreum-text-secondary); line-height: 1.55; }
+.my-jail-action-body { display: grid; gap: 13px; margin-top: 5px; }
+.my-jail-field { min-width: 0; display: grid; gap: 6px; color: var(--armoreum-text-secondary); font-size: 11px; }
+.my-jail-field input, .my-jail-field select { width: 100%; min-height: 42px; padding: 9px 11px; color: var(--armoreum-text-strong); border: 1px solid var(--armoreum-border-strong); border-radius: 5px; background: var(--armoreum-surface-raised); font: 12px var(--app-font-mono); }
+.my-jail-field input:focus-visible, .my-jail-field select:focus-visible { outline: 2px solid var(--armoreum-accent-line); outline-offset: 1px; }
+.my-jail-available-balance { margin: -6px 0 0; color: var(--armoreum-text-secondary); font-size: 10px; overflow-wrap: anywhere; }
+.my-jail-available-balance strong { color: var(--armoreum-text-strong); font-family: var(--app-font-mono); font-weight: 500; }
+.my-jail-action-note, .my-jail-quote { margin: 0; padding: 10px 11px; color: var(--armoreum-text-secondary); border: 1px solid var(--armoreum-border); border-radius: 5px; background: var(--armoreum-surface-raised); font-size: 10px; line-height: 1.55; overflow-wrap: anywhere; }
+.my-jail-quote strong { color: var(--armoreum-text-strong); font-family: var(--app-font-mono); }
+.my-jail-action-error { margin: 0; padding: 9px 10px; color: var(--armoreum-danger-text); border: 1px solid var(--armoreum-border-strong); border-radius: 5px; background: var(--armoreum-danger-bg); font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; }
+.my-jail-action-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 17px; padding-top: 13px; border-top: 1px solid var(--armoreum-border); }
+.my-jail-action-dialog :is(button):focus-visible { outline: 2px solid var(--armoreum-accent-line); outline-offset: 2px; }
+
+@media (max-width: 900px) {
+  .my-jail-page { padding-inline: 28px; }
+  .jail-state-panel { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  .my-jail-page { padding: 25px 17px 104px; }
+  .jail-heading { margin-bottom: 17px; }
+  .jail-heading h1 { font-size: 34px; }
+  .jail-context-bar { gap: 9px; padding-inline: 10px; font-size: 9px; }
+  .jail-chain-picker { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .jail-chain-picker-label { grid-column: 1 / -1; padding: 2px 6px; }
+  .jail-chain-option { min-width: 0; padding-inline: 7px; font-size: 10px; white-space: nowrap; }
+  .jail-chain-progress { display: none; }
+  .jail-balance-grid { grid-template-columns: 1fr; gap: 9px; margin-bottom: 24px; }
+  .jail-balance-card { padding: 15px; }
+  .jail-balance-label { margin-top: 13px; }
+  .jail-balance-value { font-size: 26px; }
+  .jail-vault-actions { margin-top: 11px; }
+  .jail-state-panel { align-items: flex-start; gap: 12px; padding: 16px; }
+  .jail-state-icon { width: 35px; height: 35px; }
+  .jail-state-copy { flex-basis: calc(100% - 50px); }
+  .jail-state-copy h2, .jail-state-panel h2 { font-size: 18px; }
+  .jail-state-panel > .jail-action { margin-left: 47px; }
+  .jail-skeletons { display: none; }
+  .jail-receipts { margin-left: 0; }
+}
+@media (max-width: 430px) {
+  .my-jail-page { padding-inline: 13px; }
+  .jail-position-head { flex-wrap: wrap; }
+  .jail-position-name { flex: 1 1 calc(100% - 55px); }
+  .jail-position-actions { margin: 0 0 0 46px; }
+  .jail-receipts { grid-template-columns: 1fr; }
+  .jail-receipt { grid-template-columns: minmax(0, 1fr) auto; }
+  .jail-context-network { max-width: 42%; }
+  .jail-busy-label { max-width: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}

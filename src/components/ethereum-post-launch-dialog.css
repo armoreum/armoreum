@@ -1,0 +1,213 @@
+.ethereum-post-launch-dialog {
+  display: flex !important;
+  width: 90vw !important;
+  max-width: none !important;
+  height: min(60dvh, 760px) !important;
+  max-height: min(60dvh, 760px) !important;
+  flex-direction: column;
+  gap: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border: 1px solid var(--border);
+  border-radius: 14px !important;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.ethereum-post-launch-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.ethereum-post-launch-heading {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.ethereum-post-launch-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ethereum-post-launch-eyebrow svg {
+  color: var(--primary);
+}
+
+.ethereum-post-launch-heading > strong {
+  color: var(--foreground);
+  font-size: 14px;
+}
+
+.ethereum-post-launch-address-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.ethereum-post-launch-address-row code {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--foreground);
+  font: 12px/1.5 var(--app-font-mono, monospace);
+}
+
+.ethereum-post-launch-copy,
+.ethereum-post-launch-dex-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.ethereum-post-launch-copy {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.ethereum-post-launch-header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.ethereum-post-launch-dex-link {
+  min-height: 38px;
+  padding: 8px 12px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ethereum-post-launch-copy:hover,
+.ethereum-post-launch-dex-link:hover {
+  border-color: var(--primary);
+}
+
+.ethereum-post-launch-copy-error {
+  color: var(--destructive);
+  font-size: 12px;
+}
+
+.ethereum-post-launch-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.ethereum-post-launch-body .qrc-screen {
+  min-height: 0 !important;
+  padding: 20px 24px 24px !important;
+}
+
+.ethereum-post-launch-body .qrc-shell {
+  width: 100%;
+}
+
+.ethereum-post-launch-body .qrc-steps {
+  display: none;
+}
+
+.ethereum-post-launch-body .qrc-heading {
+  margin-bottom: 15px;
+}
+
+.ethereum-post-launch-body .qrc-heading h1 {
+  font-size: clamp(21px, 3vw, 29px);
+}
+
+.ethereum-post-launch-body .qrc-heading > p {
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.ethereum-post-launch-body .qrc-footer {
+  display: none;
+}
+
+.ethereum-post-launch-progress {
+  margin: 8px 24px 24px;
+}
+
+@media (max-width: 720px) {
+  .ethereum-post-launch-dialog {
+    width: 90vw !important;
+    height: 60dvh !important;
+    max-height: 60dvh !important;
+    border-radius: 12px !important;
+  }
+
+  .ethereum-post-launch-header {
+    gap: 8px;
+    padding: 18px 16px 14px;
+  }
+
+  .ethereum-post-launch-address-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .ethereum-post-launch-address-row code {
+    max-width: 100%;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .ethereum-post-launch-header-actions {
+    padding-top: 10px;
+  }
+
+  .ethereum-post-launch-dex-link {
+    min-height: 34px;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .ethereum-post-launch-body .qrc-screen {
+    padding: 16px 14px 18px !important;
+  }
+
+  .ethereum-post-launch-body .qrc-heading {
+    margin-bottom: 12px;
+  }
+
+  .ethereum-post-launch-body .qrc-eyebrow {
+    margin-bottom: 9px;
+  }
+
+  .ethereum-post-launch-progress {
+    margin: 8px 14px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ethereum-post-launch-dialog *,
+  .ethereum-post-launch-dialog *::before,
+  .ethereum-post-launch-dialog *::after {
+    scroll-behavior: auto !important;
+  }
+}
