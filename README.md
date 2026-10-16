@@ -27,7 +27,7 @@ The contract implementation is maintained in [armoreum-contracts](https://github
 
 ## Architecture
 
-For the complete cross-repository inventory, including missing components and a proposed seven-area layout, see [repository map](docs/repository-map.md). Two published source repositories do not represent a complete system export.
+For the artifact-based seven-repository layout, source provenance, and missing runtime components, see [repository map](docs/repository-map.md). Seven source repositories do not imply a complete independently runnable system.
 
 ```text
 Browser application

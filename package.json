@@ -1,6 +1,6 @@
 {
   "name": "@armoreum/app",
-  "version": "0.1.0-source.1",
+  "version": "0.1.0-source.2",
   "description": "Armoreum application source: creator protection, token launch interfaces, recovery, and registered-pair bridging.",
   "license": "MIT",
   "repository": {

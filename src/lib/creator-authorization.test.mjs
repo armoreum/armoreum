@@ -52,6 +52,6 @@ test("authorization proof rejects invalid epochs and exhausted chains", async ()
   );
   await assert.rejects(
     deriveCreatorAuthorizationProof(prfOutput, context, "claim", 1, 0),
-    /No passkey-derived authorization proofs remain/,
+    /No authorization proofs remain in this epoch/,
   );
 });

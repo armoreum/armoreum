@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0-source.2
+
+- Document the seven-repository, artifact-based source/module ecosystem.
+- Record missing backend and shared-package dependencies without fabricating source.
+- Align one stale authorization-test error expectation with the existing implementation; authorization algorithms are unchanged.
+
 ## 0.1.0-source.1
 
 - Initial public frontend source preview.
